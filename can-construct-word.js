@@ -1,4 +1,4 @@
-
+'use strict';
 // add whatever parameters you deem necessary & write docstring
 
 /* 
@@ -22,7 +22,7 @@ function canConstructWord(word,letter) {
         return false;
     }
 
-    function getFrequencyCounter(items) {
+    function _getFrequencyCounter(items) {
         let freqs = new Map();
 
         for (let item of items) {
@@ -33,15 +33,15 @@ function canConstructWord(word,letter) {
         return freqs;
     }
 
-    const wordFreq = getFrequencyCounter(word);
-    const letterFreq = getFrequencyCounter(letter);
+    const wordFreq = _getFrequencyCounter(word);
+    const letterFreq = _getFrequencyCounter(letter);
 
-    console.log(wordFreq.get('a'), letterFreq.get('a'));
-    console.log(wordFreq,letterFreq);
-debugger
-    for (let w of wordFreq.keys()){
-        console.log('in the loop', wordFreq.get('a'), letterFreq.get('a'))
-        if (wordFreq.get(w) > letterFreq.get(w)){
+   // console.log(wordFreq.get('a'), letterFreq.get('a'));
+   // console.log(wordFreq,letterFreq);
+//debugger
+    for (let char of wordFreq.keys()){
+       // console.log('in the loop', wordFreq.get('a'), letterFreq.get('a'))
+        if (wordFreq.get(char) > letterFreq.get(char)){
             return false;
         }
     }

@@ -1,3 +1,4 @@
+'use strict';
 // find the average of pairs from the array
 //compare against the target
 //return true if a pair's average is equal to target
@@ -15,6 +16,10 @@ function averagePair(nums, targetAvg) {
   while (left < right) {
     let avg = (nums[left] + nums[right]) / 2;
 
+    if (avg === targetAvg) {
+      return true;
+    }
+
     if (avg < targetAvg) {
       left++;
     }
@@ -23,9 +28,6 @@ function averagePair(nums, targetAvg) {
       right--;
     }
 
-    if (avg === targetAvg) {
-      return true;
-    }
   }
 
   return false;
